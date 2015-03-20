@@ -50,4 +50,11 @@ public class BinarySearchTest {
         assertThat(result.isFound(), is(false));
         assertThat(result.getPosition(), is(-1));
     }
+
+    @Test
+    public void searchedElementExistsMoreThanOnceInSequence() {
+        SearchResult result = BinarySearch.search(6, new int[]{2,4,6,6,8,10});
+        assertThat(result.isFound(), is(true));
+        assertThat(result.getPosition(), is(3));
+    }
 }
